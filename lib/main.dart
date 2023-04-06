@@ -14,14 +14,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'watnow2023'),
+      home: const MyHomePage(title: Icon(Icons.home)),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
-  final String title;
+  final Icon title;
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -42,41 +42,62 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: widget.title,
+        leading: IconButton(
+          icon: Icon(Icons.menu),
+          onPressed: () {},
+        ),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text('ここにTODOを追加してね'),
-            TextField(
-              onChanged: (text) {
-                setState(() {
-                  inputText = text;
-                });
-              },
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: ""),
+          BottomNavigationBarItem(icon: Icon(Icons.search), label: ""),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.notifications_outlined),
+            label: "",
+          ),
+          BottomNavigationBarItem(icon: Icon(Icons.mail_outline), label: ""),
+        ],
+        currentIndex: 0,
+        selectedItemColor: Colors.black,
+        unselectedItemColor: Colors.black,
+      ),
+      body: Column(
+        children: <Widget>[
+          const SizedBox(height: 30),
+          const Text('今どうしてる？'),
+          TextField(
+            onChanged: (text) {
+              setState(() {
+                inputText = text;
+              });
+            },
+          ),
+          ElevatedButton(
+            onPressed: () {
+              setState(() {
+                _todo = inputText;
+              });
+            },
+            style: ElevatedButton.styleFrom(
+              shape:  
+                  RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
             ),
-            ElevatedButton(
+            child: Text('ツイートする')
+            ,
+          ),
+          ListTile(
+            title: Text('$_todo'),
+            trailing: IconButton(
+              icon: Icon(Icons.delete),
               onPressed: () {
                 setState(() {
-                  _todo = inputText;
+                  _todo = "";
                 });
               },
-              child: Text('追加'),
             ),
-            ListTile(
-              title: Text('$_todo'),
-              trailing: IconButton(
-                icon: Icon(Icons.delete),
-                onPressed: () {
-                  setState(() {
-                    _todo = "";
-                  });
-                },
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
