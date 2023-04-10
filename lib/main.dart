@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:watnow2023_demo_twitter/widgets/bottomnavigation.dart';
+import 'package:watnow2023_demo_twitter/widgets/tweetbutton.dart';
 
 void main() {
   runApp(const MyApp());
@@ -48,20 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
           onPressed: () {},
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: ""),
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: ""),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.notifications_outlined),
-            label: "",
-          ),
-          BottomNavigationBarItem(icon: Icon(Icons.mail_outline), label: ""),
-        ],
-        currentIndex: 0,
-        selectedItemColor: Colors.black,
-        unselectedItemColor: Colors.black,
-      ),
+      bottomNavigationBar: const TwitterBottomNavigationSheet(),
       body: Column(
         children: <Widget>[
           const SizedBox(height: 30),
@@ -73,6 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
               });
             },
           ),
+          const SizedBox(height: 30),
           ElevatedButton(
             onPressed: () {
               setState(() {
@@ -80,11 +70,10 @@ class _MyHomePageState extends State<MyHomePage> {
               });
             },
             style: ElevatedButton.styleFrom(
-              shape:  
-                  RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10)),
             ),
-            child: Text('ツイートする')
-            ,
+            child: Text('ツイートする'),
           ),
           ListTile(
             title: Text('$_todo'),
@@ -99,11 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      floatingActionButton: TwittetButton(func: null)
     );
   }
 }
