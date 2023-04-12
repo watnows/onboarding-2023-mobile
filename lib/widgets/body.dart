@@ -12,7 +12,7 @@ class _TwitterBodyState extends State<TwitterBody> {
   String _todo = "";
   String inputText = "";
   //ツイートを格納するリスト
-  final List _tweetList = [TweetBody(tweetText: "テストだよ")];
+  final List _tweetList = [];
   @override
   Widget build(BuildContext context) {
     return Column(
