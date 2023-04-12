@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 import 'package:watnow2023_demo_twitter/widgets/tweet.dart';
 
 class TwitterBody extends StatefulWidget {
@@ -16,26 +17,37 @@ class _TwitterBodyState extends State<TwitterBody> {
     return Column(
       children: <Widget>[
         const SizedBox(height: 30),
-        const Text('今どうしてる？'),
         TextField(
           onChanged: (text) {
             setState(() {
               inputText = text;
             });
           },
-        ),
-        const SizedBox(height: 30),
-        ElevatedButton(
-          onPressed: () {
-            setState(() {
-              _todo = inputText;
-            });
-          },
-          style: ElevatedButton.styleFrom(
-            shape:
-                RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+          decoration: const InputDecoration(
+            border: InputBorder.none,
+            labelText: '今どうしてる？',
           ),
-          child: const Text('ツイートする'),
+        ),
+        const Gap(30),
+        Row(
+          // crossAxisAlignment: CrossAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  _todo = inputText;
+                });
+              },
+              style: ElevatedButton.styleFrom(
+                shape:
+                    RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+              ),
+              //スタイル
+              child: const Text('ツイートする'),
+            ),
+            const Gap(10),
+          ],
         ),
         TweetBody(tweetText: _todo),
       ],
