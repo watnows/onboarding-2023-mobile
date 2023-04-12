@@ -10,6 +10,7 @@ class TwitterBody extends StatefulWidget {
 class _TwitterBodyState extends State<TwitterBody> {
   String _todo = "";
   String inputText = "";
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -36,18 +37,7 @@ class _TwitterBodyState extends State<TwitterBody> {
           ),
           child: Text('ツイートする'),
         ),
-        ListTile(
-          title: Text('$_todo'),
-          trailing: IconButton(
-            icon: Icon(Icons.delete),
-            onPressed: () {
-              setState(() {
-                _todo = "";
-              });
-            },
-          ),
-        ),
-        TweetBody(tweetText: "aaa"),
+        TweetBody(tweetText: _todo),
       ],
     );
   }

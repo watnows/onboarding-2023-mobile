@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Watnow2023 Demo Twitter',
       theme: ThemeData(
         primarySwatch: Colors.blue,

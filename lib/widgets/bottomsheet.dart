@@ -1,5 +1,6 @@
 // ツイートボタンを選択した時に出てくるボトムシート
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 class TweetBottomSheet extends StatelessWidget {
   const TweetBottomSheet({super.key});
@@ -11,64 +12,64 @@ class TweetBottomSheet extends StatelessWidget {
           Row(
             children: [
               IconButton(
-                icon: Icon(Icons.close),
+                icon: const Icon(Icons.close),
                 onPressed: () {
                   Navigator.pop(context);
                 },
               ),
               const Text("Tweet"),
               const Spacer(),
-              IconButton(
-                icon: Icon(Icons.image),
-                onPressed: () {},
+              const TextButton(
+                onPressed: null,
+                child: Text('下書き'),
               ),
-              IconButton(
-                icon: Icon(Icons.gif),
-                onPressed: () {},
+              const Gap(4),
+              ElevatedButton(
+                onPressed: (){
+                  Navigator.pop(context);
+              },
+                child: const Text('ツイートする'),
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
               ),
-              IconButton(
-                icon: Icon(Icons.bar_chart),
-                onPressed: () {},
-              ),
-              IconButton(
-                icon: Icon(Icons.poll),
-                onPressed: () {},
-              ),
-              IconButton(
-                icon: Icon(Icons.calendar_today),
-                onPressed: () {},
-              ),
+              const Gap(10)
             ],
           ),
           const Divider(),
           Row(
-            children: [
+            mainAxisSize: MainAxisSize.min,
+            children: const [
               IconButton(
                 icon: Icon(Icons.sentiment_satisfied_alt_outlined),
-                onPressed: () {},
+                onPressed: null,
               ),
               IconButton(
                 icon: Icon(Icons.camera_alt_outlined),
-                onPressed: () {},
+                onPressed: null,
               ),
               IconButton(
                 icon: Icon(Icons.gif),
-                onPressed: () {},
+                onPressed: null,
               ),
               IconButton(
                 icon: Icon(Icons.bar_chart),
-                onPressed: () {},
+                onPressed: null,
               ),
               IconButton(
                 icon: Icon(Icons.poll),
-                onPressed: () {},
+                onPressed: null,
               ),
               IconButton(
                 icon: Icon(Icons.calendar_today),
-                onPressed: () {},
+                onPressed: null,
               ),
             ],
           ),
+          const Divider(),
+          const TextField()
         ],
       ),
     );
