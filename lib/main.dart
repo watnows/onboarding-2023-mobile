@@ -32,7 +32,7 @@ class MyHomePage extends StatelessWidget{
     return Scaffold(
       appBar: TwitterAppBar(),
       bottomNavigationBar: const TwitterBottomNavigationSheet(),
-      body: const TwitterBody(),
+      body: SingleChildScrollView(child: const TwitterBody()),
       floatingActionButton: TweetButton(func: (){
         showModalBottomSheet(context: context, builder: (context) => const TweetBottomSheet());
       })

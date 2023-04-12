@@ -35,7 +35,7 @@ class _TwitterBodyState extends State<TwitterBody> {
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           ),
-          child: Text('ツイートする'),
+          child: const Text('ツイートする'),
         ),
         TweetBody(tweetText: _todo),
       ],
