@@ -1,4 +1,4 @@
-
+//AppBarだよ
 import 'package:flutter/material.dart';
 
 class TwitterAppBar extends AppBar{
