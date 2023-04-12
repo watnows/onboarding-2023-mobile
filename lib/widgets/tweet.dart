@@ -8,7 +8,6 @@ class TweetBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      
       children: [
         const Divider(),
         Row(

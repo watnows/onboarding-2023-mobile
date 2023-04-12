@@ -12,8 +12,7 @@ class _TwitterBodyState extends State<TwitterBody> {
   String _todo = "";
   String inputText = "";
   //ツイートを格納するリスト
- final List _tweetList = [TweetBody(tweetText: "テストだよ")];
-
+  final List _tweetList = [TweetBody(tweetText: "テストだよ")];
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -61,13 +60,14 @@ class _TwitterBodyState extends State<TwitterBody> {
         TweetBody(tweetText: _todo),
         //配列の中身があれば、それを表示する
         (_tweetList.length > 0)
-        ? ListView.builder(
-            shrinkWrap: true,
-            itemCount: _tweetList.length,
-            itemBuilder: (context, index) {
-              return  _tweetList[index];
-            })
-        : Container(height: 100),
+            ? ListView.builder(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                itemCount: _tweetList.length,
+                itemBuilder: (context, index) {
+                  return _tweetList[index];
+                })
+            : Container(height: 100),
       ],
     );
   }
