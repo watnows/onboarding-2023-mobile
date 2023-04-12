@@ -11,6 +11,8 @@ class TwitterBody extends StatefulWidget {
 class _TwitterBodyState extends State<TwitterBody> {
   String _todo = "";
   String inputText = "";
+  //ツイートを格納するリスト
+  List _tweetList = [];
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +37,7 @@ class _TwitterBodyState extends State<TwitterBody> {
           children: [
             ElevatedButton(
               onPressed: () {
+                //ツイートする時の関数だよ
                 setState(() {
                   _todo = inputText;
                 });
@@ -43,7 +46,7 @@ class _TwitterBodyState extends State<TwitterBody> {
                 shape:
                     RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
               ),
-              //スタイル
+              //文字だよ
               child: const Text('ツイートする'),
             ),
             const Gap(10),
