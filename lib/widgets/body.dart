@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:watnow2023_demo_twitter/widgets/tweet.dart';
 
 class TwitterBody extends StatefulWidget {
   const TwitterBody({super.key});
@@ -46,6 +47,7 @@ class _TwitterBodyState extends State<TwitterBody> {
             },
           ),
         ),
+        TweetBody(tweetText: "aaa"),
       ],
     );
   }

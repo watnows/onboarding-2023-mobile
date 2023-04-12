@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:watnow2023_demo_twitter/widgets/appbar.dart';
 import 'package:watnow2023_demo_twitter/widgets/body.dart';
 import 'package:watnow2023_demo_twitter/widgets/bottomnavigation.dart';
+import 'package:watnow2023_demo_twitter/widgets/bottomsheet.dart';
 import 'package:watnow2023_demo_twitter/widgets/tweetbutton.dart';
 
 void main() {
@@ -31,7 +32,9 @@ class MyHomePage extends StatelessWidget{
       appBar: TwitterAppBar(),
       bottomNavigationBar: const TwitterBottomNavigationSheet(),
       body: const TwitterBody(),
-      floatingActionButton: TwittetButton(func: null)
+      floatingActionButton: TweetButton(func: (){
+        showModalBottomSheet(context: context, builder: (context) => const TweetBottomSheet());
+      })
     );
   }
 }
