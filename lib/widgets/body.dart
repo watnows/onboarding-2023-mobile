@@ -12,7 +12,7 @@ class _TwitterBodyState extends State<TwitterBody> {
   String _todo = "";
   String inputText = "";
   //ツイートを格納するリスト
-  final List _tweetList = [];
+  List _tweetList = [];
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -37,14 +37,11 @@ class _TwitterBodyState extends State<TwitterBody> {
               onPressed: () {
                 if (inputText != "") {
                   //ツイートする時の関数だよ
-                  // setState(() {
-                  //   _todo = inputText;
-                  // });
-                  //ツイートをリストに追加する
                   setState(() {
                     _tweetList.add(TweetBody(tweetText: inputText));
                   });
                 }
+
               },
               //ツイートすると
               style: ElevatedButton.styleFrom(

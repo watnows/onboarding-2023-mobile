@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:watnow2023_demo_twitter/widgets/appbar.dart';
 import 'package:watnow2023_demo_twitter/widgets/body.dart';
 import 'package:watnow2023_demo_twitter/widgets/bottomnavigation.dart';
 import 'package:watnow2023_demo_twitter/widgets/bottomsheet.dart';
@@ -30,7 +29,10 @@ class MyHomePage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: TwitterAppBar(),
+      // appBar: TwitterAppBar(),
+      appBar: AppBar(
+        title: Image.asset('assets/logo.png', width: 100, height: 100),
+      ),
       bottomNavigationBar: const TwitterBottomNavigationSheet(),
       body: SingleChildScrollView(child: const TwitterBody()),
       // floatingActionButton: TweetButton(func: (){
