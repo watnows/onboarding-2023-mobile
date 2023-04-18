@@ -11,9 +11,9 @@ class TwitterBody extends StatefulWidget {
 
 class _TwitterBodyState extends State<TwitterBody> {
   // 入力した文字を一時的に格納する変数
-  String _todo = "";
+  String _inputText = "";
   // 入力した文字を格納する変数
-  String inputText = "";
+  String tweetText = "";
   //ツイートを格納する配列
   final List _tweetList = [];
 //ここから画面を作るよ
@@ -39,7 +39,7 @@ class _TwitterBodyState extends State<TwitterBody> {
               child: TextField(
                 onChanged: (text) {
                   setState(() {
-                    inputText = text;
+                    tweetText = text;
                   });
                 },
                 decoration: const InputDecoration(
@@ -66,11 +66,15 @@ class _TwitterBodyState extends State<TwitterBody> {
               flex: 1,
             ),
             //ツイートボタン
-            TweetButton(func:() {
-                if (inputText != "") {
+            TweetButton(
+              func: () {
+                if (tweetText != "") {
+                  //ツイートする時の関数だよ
                   //ツイートする時の関数だよ
                   setState(() {
-                    _todo = inputText;
+                    _tweetList.add(TweetBody(
+                        tweetText: tweetText,
+                        ));
                   });
                 }
               },
@@ -79,7 +83,7 @@ class _TwitterBodyState extends State<TwitterBody> {
           ],
         ),
         //ツイートの内容
-        TweetBody(tweetText: _todo,deletefunc: (){}),
+        TweetBody(tweetText: _inputText),
         //配列の中身があれば、それを表示する
         (_tweetList.isNotEmpty)
             ? ListView.builder(

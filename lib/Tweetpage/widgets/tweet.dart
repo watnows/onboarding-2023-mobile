@@ -3,9 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 class TweetBody extends StatelessWidget {
-  const TweetBody({Key? key, required this.tweetText, required this.deletefunc}) : super(key: key);
+  const TweetBody({Key? key, required this.tweetText}) : super(key: key);
   final String tweetText;
-  final Function deletefunc;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -43,11 +42,9 @@ class TweetBody extends StatelessWidget {
                           fontSize: 16,
                         )),
                     IconButton(
-                      hoverColor: Colors.transparent,
-                      highlightColor: Colors.transparent,
-                        onPressed: () {
-                          deletefunc();
-                        },
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onPressed: () {},
                         icon: const Icon(Icons.more_horiz))
                   ],
                 ),
