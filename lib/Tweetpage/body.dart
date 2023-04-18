@@ -70,11 +70,8 @@ class _TwitterBodyState extends State<TwitterBody> {
               func: () {
                 if (tweetText != "") {
                   //ツイートする時の関数だよ
-                  //ツイートする時の関数だよ
                   setState(() {
-                    _tweetList.add(TweetBody(
-                        tweetText: tweetText,
-                        ));
+                    _inputText = tweetText;
                   });
                 }
               },
