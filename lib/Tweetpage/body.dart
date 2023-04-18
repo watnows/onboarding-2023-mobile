@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:watnow2023_demo_twitter/widgets/tweet.dart';
+import 'package:watnow2023_demo_twitter/Tweetpage/widgets/tweet.dart';
 
 class TwitterBody extends StatefulWidget {
   const TwitterBody({super.key});

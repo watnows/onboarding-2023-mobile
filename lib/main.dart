@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:watnow2023_demo_twitter/widgets/body.dart';
-import 'package:watnow2023_demo_twitter/widgets/bottomnavigation.dart';
+import 'package:watnow2023_demo_twitter/Tweetpage/body.dart';
+import 'package:watnow2023_demo_twitter/bottomnavigation.dart';
 
 void main() {
   runApp(const MyApp());
