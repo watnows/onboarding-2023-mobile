@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 class TweetBody extends StatelessWidget {
-  TweetBody({Key? key, required this.tweetText}) : super(key: key);
-  String tweetText;
+  const TweetBody({Key? key, required this.tweetText}) : super(key: key);
+  final String tweetText;
   @override
   Widget build(BuildContext context) {
     return Column(
