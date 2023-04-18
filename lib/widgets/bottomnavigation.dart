@@ -1,7 +1,6 @@
-// ボトムナビゲーションバー
-
+// ボトムナビゲーションバーを定義するファイル
 import 'package:flutter/material.dart';
-
+//ボトムナビゲーションバーの実装
 class TwitterBottomNavigationSheet extends StatelessWidget {
   const TwitterBottomNavigationSheet({super.key});
   @override

@@ -5,7 +5,6 @@ import 'package:watnow2023_demo_twitter/widgets/bottomnavigation.dart';
 void main() {
   runApp(const MyApp());
   // debugPaintSizeEnabled=true;
-
 }
 
 class MyApp extends StatelessWidget {
@@ -15,7 +14,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Watnow2023 Demo Twitter',
-      debugShowCheckedModeBanner: false,       theme: ThemeData(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(),

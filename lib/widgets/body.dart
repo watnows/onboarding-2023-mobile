@@ -9,20 +9,24 @@ class TwitterBody extends StatefulWidget {
 }
 
 class _TwitterBodyState extends State<TwitterBody> {
+  // 入力した文字を一時的に格納する変数
   final String _todo = "";
+  // 入力した文字を格納する変数
   String inputText = "";
-  //ツイートを格納するリスト
+  //ツイートを格納する配列
   final List _tweetList = [];
+//ここから画面を作るよ
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        // const Gap(10),
         Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            //余白
             const Padding(
               padding: EdgeInsets.all(8.0),
+              //アイコン画像
               child: CircleAvatar(
                 radius: 30,
                 backgroundImage: AssetImage('assets/watnow_twitter_icon.png'),
@@ -30,6 +34,7 @@ class _TwitterBodyState extends State<TwitterBody> {
             ),
             const Gap(10),
             Expanded(
+              //テキスト入力欄
               child: TextField(
                 onChanged: (text) {
                   setState(() {
@@ -55,9 +60,11 @@ class _TwitterBodyState extends State<TwitterBody> {
                 onPressed: null, icon: Icon(Icons.ballot_outlined)),
             const IconButton(onPressed: null, icon: Icon(Icons.schedule)),
             const IconButton(onPressed: null, icon: Icon(Icons.place_outlined)),
+            //余白
             const Spacer(
               flex: 1,
             ),
+            //ツイートボタン
             ElevatedButton(
               onPressed: () {
                 if (inputText != "") {
@@ -71,19 +78,20 @@ class _TwitterBodyState extends State<TwitterBody> {
                   });
                 }
               },
-              //ツイートすると
+              //ツイートボタンの装飾
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.all(16.0),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
               ),
-              //文字だよ
+              //ツイートボタンの文字
               child: const Text('ツイートする',
                   style: TextStyle(fontWeight: FontWeight.bold)),
             ),
             const Gap(14),
           ],
         ),
+        //ツイートの内容
         TweetBody(tweetText: _todo),
         //配列の中身があれば、それを表示する
         (_tweetList.isNotEmpty)

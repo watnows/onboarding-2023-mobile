@@ -28,15 +28,13 @@ class TweetBody extends StatelessWidget {
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
-                        )
-                        ),
+                        )),
                     Gap(8),
                     Text('@watnow',
                         style: TextStyle(
                           color: Colors.grey,
                           fontSize: 16,
-                        )
-                        ),
+                        )),
                     Gap(8),
                     Text('2022/04/12',
                         style: TextStyle(
@@ -77,4 +75,3 @@ class TweetBody extends StatelessWidget {
     );
   }
 }
-
