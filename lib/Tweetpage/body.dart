@@ -11,7 +11,7 @@ class TwitterBody extends StatefulWidget {
 
 class _TwitterBodyState extends State<TwitterBody> {
   // 入力した文字を一時的に格納する変数
-  final String _todo = "";
+  String _todo = "";
   // 入力した文字を格納する変数
   String inputText = "";
   //ツイートを格納する配列
@@ -69,15 +69,8 @@ class _TwitterBodyState extends State<TwitterBody> {
             TweetButton(func:() {
                 if (inputText != "") {
                   //ツイートする時の関数だよ
-                  // setState(() {
-                  //   _todo = inputText;
-                  // });
-                  //ツイートする時の関数だよ
                   setState(() {
-                    _tweetList.add(TweetBody(tweetText: inputText,deletefunc: (){
-                      //自身を削除
-                      
-                    }));
+                    _todo = inputText;
                   });
                 }
               },

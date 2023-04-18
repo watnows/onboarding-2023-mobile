@@ -1,18 +1,60 @@
-# watnow2023_demo_twitter
+# watnowモバイルアプリ開発体験会用(Flutter)
+このレポジトリは2023年新入生向けコンテンツとして作成されました。
 
-A new Flutter project.
+作成者　藤沢
 
-## Getting Started
+## フォルダ構造
+* lib
+    * main.dart
+    * appbar.dart
+    * bottomnavigation.dart
+    * Tweetpage
+        * body.dart
+        * widgets
+            * tweet.dart
+            * tweetbutton.dart
+# 環境構築について
+## 1. flutterのインストール
 
-This project is a starting point for a Flutter application.
+以下参照
+>https://www.sejuku.net/blog/123973
 
-A few resources to get you started if this is your first Flutter project:
+## 2. このレポジトリのクローン
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+> `git clone (パス名)`
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# onboarding_2023_mobile
-# onboarding-2023-mobile
+その後、vscodeで開く
+
+*開きたいファイルに移動してターミナルに`code .`と入力するとvscodeが起動するよ
+## 3.パッケージのインストール
+クローンしただけだと、パッケージがインストールされてなく、大量にエラーが出ていると思われます。そのエラーはパッケージがインストールされていないことが原因なので、インストールしてあげましょう。ターミナルに `flutter pub get`と入力するとパッケージがインストールされます。
+
+## 4.起動
+`flutter run`とターミナルに入力してアプリを起動させましょう。
+
+
+# 教え方について
+
+## ゴール
+ツイートをするとそのツイートが下に追加されるようにする
+
+## 初期状態
+1.文字を入力されたタイミングで`onChanged`で文字を`_todo`に保存。
+2.`ツイートする`ボタンが押されると、setState内で`_todo`に保存されている文字が`inputText`に代入され、1つ目のツイートのテキストに反映される。
+
+
+## したいこと
+1.文字を入力されたタイミングで`onChanged`で文字を`_todo`に保存。
+2.`ツイートする`ボタンが押されると、setState内で`_tweetText`配列に入力内容を追加し、画面上ににツイートが増えていくようにする。
+## フロー
+初期状態では変数`inputText`に文字を代入しているだけで、ツイートを一つしか格納することができない。
+
+そこで配列を使って複数のツイートを格納するようにする。
+
+そこで、あらかじめ用意されている`_tweetList`配列に追加することで複数のツイートを格納することができる。
+
+## 教えること
+配列と変数の違い、その扱い方。
+
+## setStateについて
+今回setStateを使いツイートの流れを実装したが、流石に新入生に対して状態管理を教えるわけにはいかないので、できるだけスルーして欲しい（おまじない的な）。
