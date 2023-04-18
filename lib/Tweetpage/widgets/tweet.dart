@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 class TweetBody extends StatelessWidget {
-  const TweetBody({Key? key, required this.tweetText}) : super(key: key);
+  const TweetBody({Key? key, required this.tweetText, required this.deletefunc}) : super(key: key);
   final String tweetText;
+  final Function deletefunc;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -23,24 +24,31 @@ class TweetBody extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
-                  children: const [
-                    Text('Watnow',
+                  children: [
+                    const Text('Watnow',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
                         )),
-                    Gap(8),
-                    Text('@watnow',
+                    const Gap(8),
+                    const Text('@watnow',
                         style: TextStyle(
                           color: Colors.grey,
                           fontSize: 16,
                         )),
-                    Gap(8),
-                    Text('2022/04/12',
+                    const Gap(8),
+                    const Text('2022/04/12',
                         style: TextStyle(
                           color: Colors.grey,
                           fontSize: 16,
                         )),
+                    IconButton(
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                        onPressed: () {
+                          deletefunc();
+                        },
+                        icon: const Icon(Icons.more_horiz))
                   ],
                 ),
                 const Gap(4),

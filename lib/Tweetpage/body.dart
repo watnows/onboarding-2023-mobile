@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:watnow2023_demo_twitter/Tweetpage/widgets/tweet.dart';
+import 'package:watnow2023_demo_twitter/Tweetpage/widgets/tweetbutton.dart';
 
 class TwitterBody extends StatefulWidget {
   const TwitterBody({super.key});
@@ -65,8 +66,7 @@ class _TwitterBodyState extends State<TwitterBody> {
               flex: 1,
             ),
             //ツイートボタン
-            ElevatedButton(
-              onPressed: () {
+            TweetButton(func:() {
                 if (inputText != "") {
                   //ツイートする時の関数だよ
                   // setState(() {
@@ -74,25 +74,19 @@ class _TwitterBodyState extends State<TwitterBody> {
                   // });
                   //ツイートする時の関数だよ
                   setState(() {
-                    _tweetList.add(TweetBody(tweetText: inputText));
+                    _tweetList.add(TweetBody(tweetText: inputText,deletefunc: (){
+                      //自身を削除
+                      
+                    }));
                   });
                 }
               },
-              //ツイートボタンの装飾
-              style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.all(16.0),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20)),
-              ),
-              //ツイートボタンの文字
-              child: const Text('ツイートする',
-                  style: TextStyle(fontWeight: FontWeight.bold)),
             ),
             const Gap(14),
           ],
         ),
         //ツイートの内容
-        TweetBody(tweetText: _todo),
+        TweetBody(tweetText: _todo,deletefunc: (){}),
         //配列の中身があれば、それを表示する
         (_tweetList.isNotEmpty)
             ? ListView.builder(
