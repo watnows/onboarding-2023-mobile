@@ -12,13 +12,13 @@ flutterを触ったことがある人。
 
 - lib
   - main.dart
-  - appbar.dart
-  - bottomnavigation.dart
-  - Tweetpage
+  - app_bar.dart
+  - bottom_navigation.dart
+  - tweet_page
     - body.dart
     - widgets
       - tweet.dart
-      - tweetbutton.dart
+      - tweet_button.dart
 
 ## 変数の役割
 
